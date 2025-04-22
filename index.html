@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Penerapan tag meta viewport agar halaman dapat menyesuaikan lebar tampilan device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Website</title>
+    <!-- Menghubungkan font dari Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">~Nanda~</a>
+
+        <!-- Tombol Hamburger/Toggle menu yang nantinya akan muncul di mobile -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <!-- Navigasi menu pada tampilan web yang dapat diklik -->
+        <nav id="nav">
+            <a href="#" class="active">Home</a>
+            <a href="#">About Me</a>
+            <a href="#">Skills</a>
+            <a href="#">Education</a>
+            <a href="#">Experience</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Bagian Home yang merupakan halaman utama atau halaman aktif -->
+    <section class="home">
+        
+        <!-- Penggunaan picture untuk tampilan web -->
+        <div class="home-img">
+            
+            <!-- Accessbility pada gambar menggunakan alt -->
+            <img src="home.jpeg" alt="">
+        </div>
+
+        <!-- Isi Konten mengenai Portofolio Pribadi -->
+        <div class="home-content">
+            <h1>Hi, It's <span>"Nanda"</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>My name is Nanda Amalia Hastuti. 
+                I am a student majoring in Accounting Information Systems. 
+                I love making small things meaningful through design and lines of code. 
+                This portfolio is part of my journey. 
+                Let's build something amazing together✨</p>
+            
+            <!-- Penggunaan ikon media sosial -->
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <!-- Penerapan tombol Call To Action(CTA) -->
+            <a href="#" class="btn">Hire me</a>
+        </div>
+    </section>
+
+    <!-- Script untuk Toggle Menu/tombol hamburger di layar yang kecil/HP -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav");
+      
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      </script>
+      
+      
+</body>
+</html>

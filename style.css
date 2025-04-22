@@ -1,0 +1,317 @@
+/* Penerapan typografi dengan menggunakan google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap'); 
+
+/* Reset default dan penerapan font ke seluruh elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Penerapan ukuran font dasar yang fleksibel sehingga mudah dikontrol */
+html {
+    font-size: 62.5%;
+}
+
+/* Style umum untuk body web */
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* Pengaturan posisi dan tampilan pada Header dan navigasi */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Model atau style pada logo */
+.logo {
+    font-size: 3rem;
+    color: #649edb;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-family: 'Franklin Gothic Medium', Arial;
+}
+
+/* Penerapan efek hover pada logo di tampilan web */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigasi akan ditampilkan dalam bentuk horizontal */
+nav {
+    display: flex;
+    gap: 4rem;
+}
+
+/* Style pada setiap tautan navigasi*/
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+/* Tautan aktif dan hover pada menu navigasi */
+nav a:hover,
+nav a.active {
+    color: #2d66ac;
+    border-bottom: 3px solid #2d66ac;
+}
+
+/* Penggunaan Tombol hamburger untuk tampilan web dilayar yang kecil/HP */
+.menu-toggle {
+    display: none;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+/* Penerapan media query grid dan breakpoints sehingga web responsif untuk layar kecil/HP */
+@media (max-width: 768px) {
+    /* Tombol hamburger akan muncul */
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 1.2rem;
+        background-color: #161616;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 40vw;
+        padding: 0.8rem 1rem;
+        border: 1.5px solid #2d66ac;
+        border-radius: 0.6rem;
+        display: none;
+        z-index: 99;
+        max-height: 50vh;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Navigasi akan muncul ketika tombol hamburger diklik */
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 0.3rem 0;
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        transition: background-color 0.2s ease;
+    }
+}
+
+/* Section merupakan area utama dalam halaman web */
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+/* Tata letak bagian home menggunakan flexbox agar responsif */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+    /* Berfungsi agar layout tidak berubah saat ditampilkan pada layar kecil */
+    flex-wrap: wrap;
+}
+
+/* Style untuk gambar profil */
+.home-img {
+    border-radius: 50%;
+}
+
+/* Responsive image dengan ukuran dinamis dan penerapan efek hover */
+.home-img img {
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #5bcbff;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Style pada judul utama dalam konten */
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Style pada subjudul utama dalam konten */
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Highlight menggunakan warna biru */
+span {
+    color: #649edb;
+}
+
+/* Typografi animasi typing effect */
+.typing-text {
+    font-size: 3.4rem;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+/* Membuat efek animasi berganti teks secara otomatis setiap 20 detik */
+.typing-text span::before {
+    content: "Accounting Information System Student";
+    color: #649edb;
+    animation: words 20s infinite;
+}
+
+/* Efek cursor blink seperti saat mengetik */
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 0.4rem;
+    height: 3.4rem;
+    border-left: 3px solid black;
+    right: -8px;
+    animation: cursor 0.6s infinite;
+}
+
+/* Animasi cursor berkedip */
+@keyframes cursor {
+    to {
+        border-left: 3px solid #73a5db;
+    }
+}
+
+/* Animasi teks berjalan yang ditampilkan pada tampilan web */
+@keyframes words {
+    0%, 20% {
+        content: "Accounting Information System Student";
+    }
+    21%, 40% {
+        content: "Aspiring Web Developer";
+    }
+    41%, 60% {
+        content: "Future Fullstack Engineer";
+    }
+    61%, 80% {
+        content: "Tech & Innovation Lover";
+    }
+    81%, 100% {
+        content: "System Analyst in Progress";
+    }
+}
+
+/* Penerapan Ikon media sosial */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid white;
+    font-size: 2rem;
+    border-radius: 50%;
+    /* Penerapan micro-layout yang mengatur jarak & penempatan ikon media sosial */
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #3f88c5;
+}
+
+/* Efek hover pada tampilan ikon media sosial */
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #9ed7f1;
+    box-shadow: 0 0 25px #9ed7f1;
+}
+
+/* Tombol Call To Action(CTA) pada kata HIRE ME */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #3f88c5;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid white;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek hover pada Tombol Call To Action(CTA) */
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #9ed7f1;
+    color: black;
+    box-shadow: 0 0 25px #9ed7f1;
+}
+
+/* Responsif khusus untuk layar berukuran sangat kecil (max 480px) */
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .typing-text {
+        font-size: 2.5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 2rem;
+    }
+
+    nav {
+        width: 70vw;
+        padding: 0.8rem;
+        max-height: 45vh;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        padding: 0.3rem 0.5rem;
+    }
+} 
